@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Internets historia i Sverige</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root{
+            --bg:#0f1724;
+            --card:#0b1220;
+            --muted:#98a0b3;
+            --accent:#3b82f6;
+            --glass: rgba(255,255,255,0.04);
+            --radius:12px;
+        }
+        /* Reset & base */
+        *{box-sizing:border-box}
+        html,body{height:100%}
+        body{
+            margin:0;
+            font-family:Inter, Roboto, system-ui, -apple-system, "Segoe UI", "Helvetica Neue", Arial;
+            background:
+                radial-gradient(1200px 400px at 10% 10%, rgba(63,81,181,0.12), transparent 10%),
+                linear-gradient(180deg,#f4f4f9 0%, #f4f4f9 100%);
+            color:#0b1320;
+            -webkit-font-smoothing:antialiased;
+            -moz-osx-font-smoothing:grayscale;
+            line-height:1.5;
+        }
+
+        /* Header / Nav */
+        header{
+            background:linear-gradient(90deg,#0f1724 0%, #111827 100%);
+            color:#fff;
+            padding:24px 20px;
+            position:sticky;
+            top:0;
+            z-index:20;
+            box-shadow: 0 6px 18px rgba(2,6,23,0.45);
+        }
+        .container{max-width:1100px;margin:0 auto;padding:0 20px}
+        .nav{
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:16px;
+        }
+        .brand{
+            display:flex;
+            gap:12px;
+            align-items:center;
+            text-decoration:none;
+            color:inherit;
+        }
+        .logo{
+            width:44px;height:44px;border-radius:10px;background:linear-gradient(135deg,#2563eb,#7c3aed);
+            display:flex;align-items:center;justify-content:center;color:white;font-weight:700;font-size:18px;
+            box-shadow: 0 6px 20px rgba(37,99,235,0.18), inset 0 -6px 18px rgba(255,255,255,0.03);
+        }
+        .brand h1{font-size:16px;margin:0;font-weight:600}
+        .brand p{margin:0;font-size:12px;color:#9ca3af}
+
+        /* Hero */
+        .hero{
+            background:linear-gradient(180deg, rgba(59,130,246,0.06), transparent 40%);
+            padding:48px 0 36px;
+        }
+        .hero-grid{
+            display:grid;
+            grid-template-columns:1fr 380px;
+            gap:28px;
+            align-items:start;
+            padding:12px 0;
+        }
+        .hero-card{
+            background:linear-gradient(180deg,#fff,#fbfdff);
+            border-radius:var(--radius);
+            padding:28px;
+            box-shadow: 0 8px 30px rgba(12,18,40,0.06);
+        }
+        .hero h2{margin:0 0 12px;font-size:28px;color:#0b1220}
+        .hero p.lead{margin:0 0 20px;color:var(--muted);font-size:15px}
+        .cta{
+            display:inline-block;background:linear-gradient(90deg,#2563eb,#7c3aed);color:white;padding:10px 16px;border-radius:10px;text-decoration:none;font-weight:600;
+            box-shadow: 0 8px 20px rgba(67,56,202,0.18);
+        }
+
+        /* Cards / Timeline area */
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:18px;
+            margin-top:18px;
+        }
+        .card{
+            background:linear-gradient(180deg, #ffffff, #fcfdff);
+            border-radius:12px;
+            padding:18px;
+            box-shadow: 0 6px 20px rgba(12,18,40,0.04);
+            transition:transform .26s ease, box-shadow .26s ease;
+        }
+        .card:hover{transform:translateY(-6px);box-shadow: 0 16px 40px rgba(12,18,40,0.08)}
+        .card .icon{
+            width:48px;height:48px;border-radius:10px;display:inline-flex;align-items:center;justify-content:center;color:white;
+            background:linear-gradient(135deg,#7c3aed,#2563eb);margin-bottom:12px;
+        }
+        .card h3{margin:0 0 8px;font-size:18px;color:#0b1220}
+        .card p{margin:0;color:var(--muted);font-size:14px}
+
+        /* Aside (source / info) */
+        aside{
+            background:linear-gradient(180deg, #0b1220, #061223);
+            color:#dbeafe;
+            border-radius:12px;
+            padding:18px;
+            box-shadow: 0 8px 30px rgba(4,8,18,0.45);
+            height:100%;
+        }
+        aside h4{margin:0 0 8px;font-size:16px}
+        aside p{color:#b6c7e6;font-size:14px;margin:0 0 12px}
+        aside a{color: #93c5fd;text-decoration:underline}
+
+        /* Footer */
+        footer{
+            margin-top:28px;padding:28px 0;background:transparent;color:#111827;
+        }
+        footer .foot-row{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+        footer p{margin:0;color:var(--muted);font-size:13px}
+
+        /* Responsive */
+        @media (max-width:980px){
+            .hero-grid{grid-template-columns:1fr; }
+            .cards{grid-template-columns:repeat(2,1fr)}
+            aside{order:2}
+        }
+        @media (max-width:640px){
+            .cards{grid-template-columns:1fr}
+            .brand h1{font-size:14px}
+            .hero h2{font-size:22px}
+        }
+
+        /* small accessibility favours */
+        a:focus, .cta:focus{outline:3px solid rgba(37,99,235,0.18);outline-offset:3px;border-radius:10px}
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container nav">
+            <a class="brand" href="#">
+                <span class="logo">IN</span>
+                <div>
+                    <h1>Internets historia</h1>
+                    <p>Sverige — urval av viktiga händelser</p>
+                </div>
+            </a>
+            <nav aria-label="Huvudmeny">
+                <a class="cta" href="#content">Läs vidare</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="content" class="container hero" role="main">
+        <div class="hero-grid">
+            <div class="hero-card">
+                <h2>Tre berättelser från internets utveckling i Sverige</h2>
+                <p class="lead">Följ tre viktiga delar i svensk internethistoria — uppkopplingens start, bredbandets genombrott och Sveriges bidrag till global teknik. Informationen bygger på material från Internetmuseum (internetmuseum.se).</p>
+                <a class="cta" href="#sections">Utforska delarna</a>
+
+                <div class="cards" style="margin-top:22px;">
+                    <article class="card" aria-labelledby="s1">
+                        <div class="icon" aria-hidden="true">🛰️</div>
+                        <h3 id="s1">Internets tidiga uppkoppling</h3>
+                        <p>På 1980-talet skapades de första nätverken i Sverige som kopplade ihop universitet och forskningsmiljöer — grunden för senare tillgång.</p>
+                    </article>
+
+                    <article class="card" aria-labelledby="s2">
+                        <div class="icon" aria-hidden="true">⚡</div>
+                        <h3 id="s2">Bredbandets genombrott</h3>
+                        <p>Under 1990- och 2000-talen ledde tekniska förbättringar och utbyggnad av infrastruktur till bredband i hemmen.</p>
+                    </article>
+
+                    <article class="card" aria-labelledby="s3">
+                        <div class="icon" aria-hidden="true">🎧</div>
+                        <h3 id="s3">Svenska innovationer</h3>
+                        <p>Svenska företag och digitala tjänster har haft stor inverkan internationellt — både produkt- och tjänsteinnovationer.</p>
+                    </article>
+                </div>
+            </div>
+
+            <aside>
+                <h4>Källa & vidare läsning</h4>
+                <p>Det här är ett kort urval. För djupare läsning och källmaterial, se Internetmuseum:</p>
+                <p><a href="https://internetmuseum.se/" target="_blank" rel="noopener">internetmuseum.se</a></p>
+                <hr style="border:none;height:1px;background:rgba(255,255,255,0.04);margin:14px 0;border-radius:2px">
+                <p style="font-size:13px;color:#bcd3ff">Tips: Använd bilder och tidslinjer från källan för att göra sidan mer illustrativ.</p>
+            </aside>
+        </div>
+
+        <!-- Detailed sections (expandable if you want) -->
+        <section id="sections" style="margin-top:26px;background:transparent;padding:0;">
+            <div style="display:grid;gap:16px">
+                <div style="background:#fff;padding:20px;border-radius:12px;box-shadow:0 8px 24px rgba(12,18,40,0.04)">
+                    <h3>1. Internets födelse i Sverige</h3>
+                    <p style="color:var(--muted)">I slutet av 1970-talet och början av 1980-talet började svenska universitet och forskningsinstitut kopplas ihop via olika nätverk. Dessa tidiga kopplingar möjliggjorde datadelning och forskning över distans.</p>
+                </div>
+
+                <div style="background:#fff;padding:20px;border-radius:12px;box-shadow:0 8px 24px rgba(12,18,40,0.04)">
+                    <h3>2. Lanseringen av bredband</h3>
+                    <p style="color:var(--muted)">Under 1990-talet ökade behovet av snabbare uppkoppling, och utbyggnaden av bredbandsinfrastruktur gjorde internet tillgängligt för fler hushåll och företag.</p>
+                </div>
+
+                <div style="background:#fff;padding:20px;border-radius:12px;box-shadow:0 8px 24px rgba(12,18,40,0.04)">
+                    <h3>3. Sveriges roll i internets utveckling</h3>
+                    <p style="color:var(--muted)">Svenska entreprenörer och teknikföretag har bidragit med betydande innovationer inom kommunikation och media, vilket format både nationell och internationell utveckling.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="container foot-row">
+                <p>&copy; 2025 Internets historia — kort översikt</p>
+                <p style="font-size:13px;color:var(--muted)">Källor: <a href="https://internetmuseum.se/" target="_blank" rel="noopener">Internetmuseum</a></p>
+            </div>
+        </footer>
+    </main>
+</body>
+</html>
