@@ -1,0 +1,16 @@
+@keyframes moveRight {
+    from { transform: translateX(0); }
+    to   { transform: translateX(200px); }
+  }
+  
+
+  .animated-circle{
+    width:100px;
+    height:100px;
+    background:linear-gradient(180deg,#3cb371,#2e8b57);
+    border-radius:50%;
+    display:inline-block;
+    will-change:transform;
+    animation: moveRight 2s ease-in-out infinite alternate;
+    margin:0.5rem;
+  }

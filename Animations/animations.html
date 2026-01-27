@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Animationer och Transitions</title>
+  <link rel="stylesheet" href="animations.css">
+  <link rel="stylesheet" href="transitions.css">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Animationer och Transitions (CSS)</h1>
+    <p class="lead">Enkla exempel: transition (hover) och animation (@keyframes)</p>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <h2>Transition (hover)</h2>
+      <p>Transition används för att göra en mjuk övergång mellan två tillstånd när en egenskap ändras (t.ex. vid hover).</p>
+      <div class="example-row">
+        <div class="box" aria-hidden="true"></div>
+        <div class="explain">
+          <p>Hovra över den blå kvadraten för att se färgövergången och storlek förändringen.</p>
+          <pre><code>.box { transition: background-color 0.3s ease; }</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Animation (@keyframes)</h2>
+      <p>Animationer använder <code>@keyframes</code> för att definiera steg över tid. Exemplet flyttar en cirkel från x=0 till x=200px.</p>
+      <div class="example-row">
+        <div class="animated-circle" aria-hidden="true"></div>
+        <div class="explain">
+          <p>Cirkeln rör sig fram och tillbaka automatiskt.</p>
+          <pre><code>@keyframes moveRight { from { transform: translateX(0); } to { transform: translateX(200px); } }</code></pre>
+        </div>
+      </div>
+    </section>
+  </main>
